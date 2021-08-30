@@ -273,5 +273,5 @@ spec:
     name: seldon-core-operator
   repos:
   - name: manifests
-    uri: https://github.com/opendatahub-io/manifests/tarball/v1.0-branch-openshift
+    uri: https://github.com/opendatahub-io/manifests/archieve/v1.0-branch-openshift.tar.gz
   version: v1.0-branch-openshift

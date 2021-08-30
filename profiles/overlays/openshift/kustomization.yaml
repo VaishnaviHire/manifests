@@ -2,5 +2,5 @@ bases:
 - ../../base
 images:
 - name: gcr.io/kubeflow-images-public/profile-controller
-  newName: quay.io/kubeflow/profile-controller
-  newTag: v0.7.0
+  newName: quay.io/vhire/profile-controller
+  newTag: v20210830-v1.3.0-rc.0-5-gf61563cc-dirty-9800fa
