@@ -1,0 +1,60 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - namespace.yaml
+  - memberroll.yaml
+  - controlplane.yaml
+
+configMapGenerator:
+  - name: servicemesh-parameters
+    envs:
+      - params.env
+generatorOptions:
+  disableNameSuffixHash: true
+vars:
+  - name: namespace
+    objref:
+      kind: ConfigMap
+      name: servicemesh-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.namespace
+  - name: profile-name
+    objref:
+      kind: ConfigMap
+      name: servicemesh-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.profile-name
+  - name: tekton-pipelines
+    objref:
+      kind: ConfigMap
+      name: servicemesh-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.tekton-pipelines
+  - name: knative-serving
+    objref:
+      kind: ConfigMap
+      name: servicemesh-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.knative-serving
+  - name: knative-eventing
+    objref:
+      kind: ConfigMap
+      name: servicemesh-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.knative-eventing
+  - name: kfserving-test
+    objref:
+      kind: ConfigMap
+      name: servicemesh-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.kfserving-test
+configurations:
+  - params.yaml

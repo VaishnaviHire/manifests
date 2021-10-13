@@ -1,0 +1,8 @@
+# This label is required to adhere to the rules created by the ServiceMesh Network policies.
+# The Network policy created by Service Mesh permits traffic if it’s coming from a namespace with label
+# network.openshift.io/policy-group=ingress and to pods with label maistra.io/expose-route: "true"
+- op: add
+  path: /spec/template/metadata/labels/maistra.io~1expose-route
+  value: "true"
+
+
