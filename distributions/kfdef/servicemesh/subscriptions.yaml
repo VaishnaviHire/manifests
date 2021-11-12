@@ -1,0 +1,16 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: smsubscriptions
+  namespace: openshift-operators
+spec:
+  applications:
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift-service-mesh/
+      name: openshift-service-mesh
+  repos:
+    - name: manifests
+      uri: https://github.com/VaishnaviHire/odh-manifests/archive/integrate_service_mesh.tar.gz
+  version: v1.3.0-tag
