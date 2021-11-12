@@ -6,6 +6,14 @@ metadata:
 spec:
   applications:
     - kustomizeConfig:
+        parameters:
+          - name: namespace
+            value: openshift-operators
+        repoRef:
+          name: odhmanifests
+          path: openshift-service-mesh
+      name: openshift-sm
+    - kustomizeConfig:
         repoRef:
           name: manifests
           path: distributions/stacks/openshift-managed/application/openshift-scc
@@ -81,6 +89,8 @@ spec:
           path: distributions/stacks/openshift-managed
       name: kubeflow-apps
   repos:
+    - name: odhmanifests
+      uri: 'https://github.com/VaishnaviHire/odh-manifests/archive/sm_subs.tar.gz'
     - name: manifests
       uri: 'https://github.com/VaishnaviHire/manifests/archive/test_sm_istio.tar.gz'
-  version: v1.3.0
+  version: v1.3.0-tag
