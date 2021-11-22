@@ -8,3 +8,6 @@ spec:
     - kubeflow
     - kubeflow-user-example-com
     - tekton-pipelines
+    - knative-eventing
+    - knative-serving
+    - kfserving-system
