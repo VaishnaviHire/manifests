@@ -4,10 +4,10 @@ namespace: kubeflow
 resources:
   - ../../../../../apps/profiles/upstream/overlays/kubeflow
 
-patchesJson6902:
-  - path: ../../patch_sidecar.yaml
-    target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: deployment
+#patchesJson6902:
+#  - path: ../../patch_sidecar.yaml
+#    target:
+#      group: apps
+#      version: v1
+#      kind: Deployment
+#      name: deployment

@@ -4,10 +4,10 @@ namespace: kubeflow
 resources:
   - ../../../../../apps/tf-training/upstream/overlays/kubeflow
 
-patchesJson6902:
-  - path: ../../patch_sidecar.yaml
-    target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: tf-job-operator
+#patchesJson6902:
+#  - path: ../../patch_sidecar.yaml
+#    target:
+#      group: apps
+#      version: v1
+#      kind: Deployment
+#      name: tf-job-operator
