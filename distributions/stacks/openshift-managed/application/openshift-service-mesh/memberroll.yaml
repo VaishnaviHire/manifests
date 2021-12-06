@@ -11,3 +11,4 @@ spec:
     - knative-eventing
     - knative-serving
     - kfserving-system
+    - kfserving-test
