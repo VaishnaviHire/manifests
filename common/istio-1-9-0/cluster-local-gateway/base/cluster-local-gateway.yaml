@@ -8,7 +8,7 @@ metadata:
     app: cluster-local-gateway
     istio: cluster-local-gateway
     release: istio
-    istio.io/rev: default
+    istio.io/rev: basic
     install.operator.istio.io/owning-resource: unknown
     operator.istio.io/component: IngressGateways
 ---
@@ -19,7 +19,7 @@ metadata:
     app: cluster-local-gateway
     install.operator.istio.io/owning-resource: unknown
     istio: cluster-local-gateway
-    istio.io/rev: default
+    istio.io/rev: basic
     operator.istio.io/component: IngressGateways
     release: istio
   name: cluster-local-gateway
@@ -46,7 +46,7 @@ spec:
         heritage: Tiller
         install.operator.istio.io/owning-resource: unknown
         istio: cluster-local-gateway
-        istio.io/rev: default
+        istio.io/rev: basic
         operator.istio.io/component: IngressGateways
         release: istio
         service.istio.io/canonical-name: cluster-local-gateway
@@ -103,7 +103,7 @@ spec:
         - name: PILOT_CERT_PROVIDER
           value: istiod
         - name: CA_ADDR
-          value: istiod.istio-system.svc:15012
+          value: istiod-basic.istio-system.svc:15012
         - name: NODE_NAME
           valueFrom:
             fieldRef:
@@ -267,7 +267,7 @@ metadata:
     app: cluster-local-gateway
     istio: cluster-local-gateway
     release: istio
-    istio.io/rev: default
+    istio.io/rev: basic
     install.operator.istio.io/owning-resource: unknown
     operator.istio.io/component: IngressGateways
 spec:
@@ -284,7 +284,7 @@ metadata:
   namespace: istio-system
   labels:
     release: istio
-    istio.io/rev: default
+    istio.io/rev: basic
     install.operator.istio.io/owning-resource: unknown
     operator.istio.io/component: IngressGateways
 rules:
@@ -299,7 +299,7 @@ metadata:
   namespace: istio-system
   labels:
     release: istio
-    istio.io/rev: default
+    istio.io/rev: basic
     install.operator.istio.io/owning-resource: unknown
     operator.istio.io/component: IngressGateways
 roleRef:
@@ -317,7 +317,7 @@ metadata:
     app: cluster-local-gateway
     install.operator.istio.io/owning-resource: unknown
     istio: cluster-local-gateway
-    istio.io/rev: default
+    istio.io/rev: basic
     operator.istio.io/component: IngressGateways
     release: istio
   name: cluster-local-gateway
