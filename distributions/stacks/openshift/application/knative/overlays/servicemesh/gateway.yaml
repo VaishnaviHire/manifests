@@ -1,0 +1,9 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: cluster-local-gateway
+  namespace: knative-serving
+spec:
+  selector:
+    istio: ingressgateway
+

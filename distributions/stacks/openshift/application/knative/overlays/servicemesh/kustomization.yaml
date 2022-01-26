@@ -1,0 +1,88 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+  - ../../base
+resources:
+  - service.yaml
+
+patchesStrategicMerge:
+  - gateway.yaml
+
+patchesJson6902:
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: eventing-controller
+      namespace: knative-eventing
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: broker-controller
+      namespace: knative-eventing
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: eventing-webhook
+      namespace: knative-eventing
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: imc-controller
+      namespace: knative-eventing
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: imc-dispatcher
+      namespace: knative-eventing
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: activator
+      namespace: knative-serving
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: autoscaler
+      namespace: knative-serving
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: networking-istio
+      namespace: knative-serving
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: webhook
+      namespace: knative-serving
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: controller
+      namespace: knative-serving
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: istio-webhook
+      namespace: knative-serving

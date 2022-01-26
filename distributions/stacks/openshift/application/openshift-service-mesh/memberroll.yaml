@@ -1,0 +1,13 @@
+apiVersion: maistra.io/v1
+kind: ServiceMeshMemberRoll
+metadata:
+  namespace: istio-system
+  name: default
+spec:
+  members:
+    - $(namespace)
+    - $(profile-name)
+    - $(tekton-pipelines)
+    - $(knative-serving)
+    - $(knative-eventing)
+    - $(kfserving-test)
