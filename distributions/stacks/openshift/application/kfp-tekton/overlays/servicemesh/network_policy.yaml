@@ -1,0 +1,13 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-traffic-outside-mesh
+  namespace: tekton-pipelines
+spec:
+  podSelector:
+    matchLabels:
+      maistra.io/expose-route: 'true'
+  ingress:
+    - {}
+  policyTypes:
+    - Ingress

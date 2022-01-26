@@ -1,0 +1,13 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-outside-traffic
+  namespace: knative-serving
+spec:
+  podSelector:
+    matchLabels:
+      maistra.io/expose-route: 'true'
+  ingress:
+    - {}
+  policyTypes:
+    - Ingress

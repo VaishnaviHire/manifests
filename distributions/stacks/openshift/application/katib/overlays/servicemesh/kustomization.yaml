@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+bases:
+  - ../../base
+patchesJson6902:
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: katib-ui
+      namespace: kubeflow
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: katib-mysql
+      namespace: kubeflow
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: katib-db-manager
+      namespace: kubeflow
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: katib-controller
+      namespace: kubeflow

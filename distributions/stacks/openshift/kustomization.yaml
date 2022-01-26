@@ -11,7 +11,7 @@ resources:
   - application/istio-1-9-0-Openshift/network-attachment.yaml
 #Added custom centraldashboard to remove tensorboard
  # - ../../../apps/centraldashboard/upstream/overlays/istio
-  - application/centraldashboard
+  - application/centraldashboard/base
 #Admission webhooks
   - ../../../apps/admission-webhook/upstream/overlays/cert-manager
 #profiles is here since namespace was not being replaced for the virtual service and pipeline depends on it
@@ -46,5 +46,5 @@ vars:
 # Rebuilt profile controller image for KF 1.3
 images:
 - name: public.ecr.aws/j1r0q0g6/notebooks/profile-controller
-  newName: quay.io/kubeflow/profile-controller 
+  newName: quay.io/kubeflow/profile-controller
   newTag: v0.12.0
