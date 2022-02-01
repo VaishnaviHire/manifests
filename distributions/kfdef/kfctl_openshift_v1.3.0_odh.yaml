@@ -8,7 +8,7 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/openshift/openshift-scc
+        path: distributions/stacks/openshift/application/openshift/openshift-scc/overlays/istio
     name: openshift-scc
   - kustomizeConfig:
       repoRef:
@@ -23,7 +23,7 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/kfp-tekton
+        path: distributions/stacks/openshift/application/kfp-tekton/base
     name: kfp-tekton
 #Uncomment if you need KFP on Argo
 #  - kustomizeConfig:
@@ -35,43 +35,43 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/knative
+        path: distributions/stacks/openshift/application/knative/overlays/istio
     name: knative
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/jupyter-web-app
+        path: distributions/stacks/openshift/application/jupyter-web-app/base
     name: jupyter-web-app
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/notebook-controller
+        path: distributions/stacks/openshift/application/notebook-controller/base
     name: notebook-controller
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/katib
+        path: distributions/stacks/openshift/application/katib/base
     name: katib
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/tf-job
+        path: distributions/stacks/openshift/application/tf-job/base
     name: tf-job
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/pytorch-job
+        path: distributions/stacks/openshift/application/pytorch-job/base
     name: pytorch-job
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/volumes-web-app
+        path: distributions/stacks/openshift/application/volumes-web-app/base
     name: volumes-web-app
   # This takes a long time, please wait for it
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: distributions/stacks/openshift/application/kfserving
+        path: distributions/stacks/openshift/application/kfserving/base
     name: kfserving
   - kustomizeConfig:
       repoRef:
