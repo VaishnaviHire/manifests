@@ -8,7 +8,7 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/openshift/openshift-scc
+        path: openshift/openshiftstack/application/openshift/openshift-scc/overlays/istio
     name: openshift-scc
   - kustomizeConfig:
       repoRef:
@@ -23,7 +23,7 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/kfp-tekton
+        path: openshift/openshiftstack/application/kfp-tekton/base
     name: kfp-tekton
 #Uncomment if you need KFP on Argo
 #Make sure to comment kfp-tekton
@@ -35,42 +35,42 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/knative
+        path: openshift/openshiftstack/application/knative/overlays/istio
     name: knative
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/jupyter-web-app
+        path: openshift/openshiftstack/application/jupyter-web-app/base
     name: jupyter-web-app
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/notebook-controller
+        path: openshift/openshiftstack/application/notebook-controller/base
     name: notebook-controller
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/volumes-web-app
+        path: openshift/openshiftstack/application/volumes-web-app/base
     name: volumes-web-app
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/training-operator
+        path: openshift/openshiftstack/application/training-operator/base
     name: training-operator
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/katib
+        path: openshift/openshiftstack/application/katib/base
     name: katib
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/mpi-job
+        path: openshift/openshiftstack/application/mpi-job/base
     name: mpi-job
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: openshift/openshiftstack/application/kfserving
+        path: openshift/openshiftstack/application/kfserving/base
     name: kfserving
   - kustomizeConfig:
       repoRef:
