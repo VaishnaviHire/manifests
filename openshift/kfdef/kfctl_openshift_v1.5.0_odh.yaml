@@ -62,6 +62,12 @@ spec:
         name: manifests
         path: openshift/openshiftstack/application/katib
     name: katib
+# To deploy kserve uncomment following line. Also note to remove/comment out kfserving application
+#    - kustomizeConfig:
+#        repoRef:
+#          name: manifests
+#          path: openshift/openshiftstack/application/kserve/overlays/servicemesh
+#      name: kserve
   - kustomizeConfig:
       repoRef:
         name: manifests
@@ -74,5 +80,5 @@ spec:
     name: kubeflow-apps
   repos:
   - name: manifests
-    uri: https://github.com/lavlas/manifests/archive/feature/kf-v1.5.tar.gz
+    uri: https://github.com/opendatahub-io/manifests/archive/feature/v1.5-branch-openshift.tar.gz
   version: v1.5.0

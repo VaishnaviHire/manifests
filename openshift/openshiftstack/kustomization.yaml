@@ -14,7 +14,7 @@ resources:
   - application/istio-1-1-1-Openshift/network-attachment.yaml
 
 #Added custom centraldashboard to remove tensorboard
-  - application/centraldashboard
+  - application/centraldashboard/base
 
 #Cluster issuer
   - application/cert-manager-1.5/cluster-issuer-nm.yaml

@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+bases:
+  - ../../base
+patchesJson6902:
+  - path: ../../../../add_label.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: pytorch-operator
+      namespace: kubeflow

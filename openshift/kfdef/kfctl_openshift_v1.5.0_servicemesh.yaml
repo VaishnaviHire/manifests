@@ -1,0 +1,99 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: kubeflow
+  namespace: kubeflow
+spec:
+  applications:
+    - kustomizeConfig:
+        parameters:
+          - name: namespace
+            value: openshift-operators
+        repoRef:
+          name: odhmanifests
+          path: openshift-service-mesh/base
+      name: openshift-sm
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/openshift/openshift-scc/overlays/servicemesh
+      name: openshift-scc
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/cert-manager-1.5
+      name: cert-manager
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/admission-webhook/overlays/servicemesh
+      name: admission-webhook
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/openshift-service-mesh
+      name: istio-service-mesh
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/knative/overlays/servicemesh
+      name: knative
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/kfp-tekton/overlays/servicemesh
+      name: kfp-tekton
+    #Uncomment if you need KFP on Argo
+    #Make sure to comment kfp-tekton
+    #  - kustomizeConfig:
+    #      repoRef:
+    #        name: manifests
+    #        path: openshift/openshiftstack/application/pipeline-agnostic
+    #    name: pipeline
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/jupyter-web-app/overlays/servicemesh
+      name: jupyter-web-app
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/notebook-controller/overlays/servicemesh
+      name: notebook-controller
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/volumes-web-app/overlays/servicemesh
+      name: volumes-web-app
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/training-operator/overlays/servicemesh
+      name: training-operator
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/katib/overlays/servicemesh
+      name: katib
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack/application/kserve/overlays/servicemesh
+      name: kserve
+# To deploy kfserving uncomment following line. Also note to remove/comment out kserve application
+#    - kustomizeConfig:
+#        repoRef:
+#          name: manifests
+#          path: openshift/openshiftstack/application/kfserving/overlays/servicemesh
+#      name: kfserving
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: openshift/openshiftstack
+      name: kubeflow-apps
+  repos:
+    - name: odhmanifests
+      uri: https://github.com/opendatahub-io/odh-manifests/tarball/master
+    - name: manifests
+      uri: https://github.com/opendatahub-io/manifests/archive/v1.5-branch-openshift.tar.gz
+  version: v1.5.0
