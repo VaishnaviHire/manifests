@@ -10,4 +10,10 @@ After the Kubeflow community releases a stable Tag, we pull this new Tag in our 
 4. Copy the folder called ```openshift``` from the previous release openshift branch for example from v1.3.0-openshift
 5. Make changes on fixes then submit the PR
 
+## Install KF 1.6 on OpenShift
 
+### Istio Stack
+
+```commandline
+while ! kustomize build openshift/example/istio | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+```

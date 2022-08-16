@@ -8,3 +8,7 @@
     host: kserve-models-web-app.kubeflow.svc.cluster.local
     port:
       number: 80
+- op: replace
+  path: /spec/gateways
+  value:
+    - kubeflow/kubeflow-gateway

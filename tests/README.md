@@ -4,7 +4,7 @@
 
 There are 2 goals for the e2e tests:
 1. Verify that core components can be applied and become Ready
-2. Virify that core CRDs can be created and succeed
+2. Verify that core CRDs can be created and succeed
 
 ### Components
 
@@ -14,6 +14,8 @@ the core and common (Istio, Knativ, Cert Manager) are being installed and
 included in the tests.
 
 ### Test Suite
+
+**To use KFserving v0.5/0.6 instead of KServe v0.7, comment the 6,7th lines and uncomment the 10,11th lines here [e2e/utils/kserve.py](https://github.com/kubeflow/manifests/compare/master/tests/e2e/utils/kserve.py#L6-L11)**
 
 The e2e tests are completely independent of the underlying K8s cluster, as well
 as the platform of the cluster. These tests should be able to run in real

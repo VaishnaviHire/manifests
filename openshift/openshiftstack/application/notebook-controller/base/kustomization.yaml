@@ -6,26 +6,3 @@ resources:
 
 patchesStrategicMerge:
 - ./configs/addfsgroup-env.yaml
-
-configMapGenerator:
-- name: kubeflow-config
-  envs:
-  - ../../../config/params.env
-# We need to define vars at the top level otherwise we will get
-# conflicts.
-vars:
-- fieldref:
-    fieldPath: data.clusterDomain
-  name: clusterDomain
-  objref:
-    apiVersion: v1
-    kind: ConfigMap
-    name: kubeflow-config
-- fieldref:
-    fieldPath: metadata.namespace
-  name: namespace
-  objref:
-    apiVersion: v1
-    kind: ConfigMap
-    name: kubeflow-config
-

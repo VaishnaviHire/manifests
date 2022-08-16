@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../openshiftstack/application/openshift/openshift-scc/overlays/istio
+  - ../../openshiftstack/application/istio-1-14-OpenShift
+  - ../../openshiftstack/application/cert-manager-1.5
+  - ../../openshiftstack/application/kfp-tekton/base
+  - ../../openshiftstack/application/knative/overlays/istio
+  - ../../openshiftstack/application/jupyter-web-app/base
+  - ../../openshiftstack/application/notebook-controller/base
+  - ../../openshiftstack/application/volumes-web-app/base
+  - ../../openshiftstack/application/training-operator/base
+  - ../../openshiftstack/application/katib/base
+  - ../../openshiftstack/application/kserve/base
+  - ../../openshiftstack/
