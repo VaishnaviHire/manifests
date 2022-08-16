@@ -3,4 +3,4 @@ kind: Kustomization
 bases:
   - ../../base
 resources:
-  - ../../../../../../common/istio-1-9/cluster-local-gateway/base
+  - ../../../../../../common/istio-1-14/cluster-local-gateway/base
