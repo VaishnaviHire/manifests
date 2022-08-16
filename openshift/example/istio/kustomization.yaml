@@ -3,8 +3,9 @@ kind: Kustomization
 
 resources:
   - ../../openshiftstack/application/openshift/openshift-scc/overlays/istio
-  - ../../openshiftstack/application/istio-1-14-OpenShift
+  - ../../openshiftstack/application/istio-1-14-OpenShift/overlays/cni
   - ../../openshiftstack/application/cert-manager-1.5
+  - ../../openshiftstack/application/profiles-resources/base
   - ../../openshiftstack/application/kfp-tekton/base
   - ../../openshiftstack/application/knative/overlays/istio
   - ../../openshiftstack/application/jupyter-web-app/base

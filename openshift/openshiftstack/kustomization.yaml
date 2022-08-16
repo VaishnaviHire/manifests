@@ -5,11 +5,14 @@ resources:
 #Kubeflow roles
   - ../../common/kubeflow-roles/base
 
+# This is here because it needs to install in namespace kubeflow
+  - application/istio-1-14-OpenShift/base/network-attachment.yaml
+
 #Added custom centraldashboard to remove tensorboard
   - application/centraldashboard/base
 
 #Cluster issuer
-  - application/cert-manager-1.5/cluster-issuer-nm.yaml
+  - application/cert-manager/cluster-issuer-nm.yaml
 
 #Admission webhooks
   - ../../apps/admission-webhook/upstream/overlays/cert-manager
