@@ -12,7 +12,7 @@ resources:
   - application/centraldashboard/base
 
 #Cluster issuer
-  - application/cert-manager/cluster-issuer-nm.yaml
+  - application/cert-manager-1.5/cluster-issuer-nm.yaml
 
 #Admission webhooks
   - ../../apps/admission-webhook/upstream/overlays/cert-manager
