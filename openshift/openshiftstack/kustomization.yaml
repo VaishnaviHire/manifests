@@ -27,6 +27,9 @@ resources:
 #Create defualt user
   - ../../common/user-namespace/base
 
+# Create network-attachment for default user namespace
+  - application/notebook-controller/base/configs/network_attachment.yaml
+
 configMapGenerator:
 - name: kubeflow-config
   envs:

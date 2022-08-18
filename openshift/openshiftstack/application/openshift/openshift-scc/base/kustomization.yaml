@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: kubeflow
 resources:
 - kubeflow-anyuid-scc.yaml
+- kubeflow-user-anyuid.yaml
 - tekton-anyuid-scc.yaml
 - knative-anyuid-scc.yaml
 vars:

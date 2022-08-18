@@ -1,0 +1,40 @@
+allowHostPorts: false
+priority: 10
+requiredDropCapabilities:
+  - MKNOD
+allowPrivilegedContainer: true
+runAsUser:
+  type: RunAsAny
+users:
+  - 'system:serviceaccount:kubeflow-user-example-com:default-editor'
+  - 'system:serviceaccount:kubeflow-user-example-com:default-viewer'
+  - 'system:serviceaccount:kubeflow:admission-webhook-service-account'
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+seLinuxContext:
+  type: MustRunAs
+readOnlyRootFilesystem: false
+metadata:
+  name: kubeflow-user-anyuid-kubeflow
+fsGroup:
+  type: RunAsAny
+groups:
+  - 'system:cluster-admins'
+kind: SecurityContextConstraints
+defaultAddCapabilities: null
+supplementalGroups:
+  type: RunAsAny
+volumes:
+  - configMap
+  - downwardAPI
+  - emptyDir
+  - persistentVolumeClaim
+  - projected
+  - secret
+allowHostPID: false
+allowHostNetwork: false
+allowPrivilegeEscalation: true
+apiVersion: security.openshift.io/v1
+allowedCapabilities:
+  - NET_ADMIN
+  - NET_RAW

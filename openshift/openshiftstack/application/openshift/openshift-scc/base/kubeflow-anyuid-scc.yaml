@@ -46,6 +46,7 @@ users:
 - system:serviceaccount:$(NAMESPACE):pipeline-runner
 # Allowing all serviceaccounts in kubeflow to run any uid per istio 1.9 documentation for openshift https://istio.io/latest/docs/setup/platform-setup/openshift/
 - system:serviceaccounts:$(NAMESPACE)
+- system:serviceaccounts:kubeflow-user-example-com
 volumes:
 - configMap
 - downwardAPI
