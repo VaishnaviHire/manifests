@@ -1,0 +1,7 @@
+## profiles component is deployed in openshift/openstack/kustomizaton.yaml
+## This component deploys resources required by profile controller KF 1.6 onwards
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- network_attachment.yaml
+- authorization_policy.yaml
