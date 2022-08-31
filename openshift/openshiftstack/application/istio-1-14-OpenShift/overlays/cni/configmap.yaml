@@ -104,7 +104,7 @@ data:
         "sts": {
           "servicePort": 0
         },
-        "tag": "1.14.0",
+        "tag": "1.11.0",
         "tracer": {
           "datadog": {
             "address": "$(HOST_IP):8126"
